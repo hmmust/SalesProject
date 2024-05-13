@@ -13,3 +13,9 @@ class SupplierAdd(CreateView):
     template_name = "add.html"
     success_url = reverse_lazy("homepage")
 
+class SupplierView(ListView):
+    model = Supplier
+    form_class = SupplierForm
+    template_name = "base.html"
+    success_url = reverse_lazy("homepage")
+
