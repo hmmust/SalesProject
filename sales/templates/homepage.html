@@ -1,0 +1,9 @@
+{%  extends 'base.html' %}
+{% block 'title' %} {{title}} {% endblock %}
+{% block 'body1' %}
+<table>
+{% for i in products %}
+ <tr><td>{{i.pid}}</td><td> {{i.name}}</td><td><a href="{% url 'update' i.pk  %}">update</a></td><td><a href="{% url 'delete' i.pk  %}">delete</a></td></tr>
+{% endfor %}
+</table>
+{% endblock %}
