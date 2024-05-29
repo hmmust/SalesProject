@@ -1,11 +1,12 @@
 {%  extends 'base.html' %}
+{% load crispy_forms_tags %}
 {% block 'title' %} hi {% endblock %}
 {% block 'body1' %}
 <form method="post">
 <table>
-{{ form}}
+{{ form|crispy}}
 </table>
-<button name="save" value="Save">Update</button>
+<button name="save" class="btn btn-primary" value="Save">Update</button>
  {% csrf_token %}
     </form>
 {% endblock %}

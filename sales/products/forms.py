@@ -7,6 +7,11 @@ class ProductForm(forms.ModelForm):
         fields = "__all__"
         widgets ={"purchase_date":forms.NumberInput(attrs={"type":"date"}),"description":forms.TextInput()}
 
+    def clean_quantity(self):
+        if int(self.cleaned_data['quantity']) <0:
+            raise django.core.exceptions.ValidationError("Quantity must be greater or equal zero")
+        return self.cleaned_data['quantity']
+
 class SupplierForm(forms.ModelForm):
     class Meta:
         model = Supplier

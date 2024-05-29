@@ -5,7 +5,7 @@ from django.views.generic import CreateView,UpdateView,DeleteView,ListView
 from django.urls import reverse_lazy
 
 def homepage(request):
-    return HttpResponse("Welcome to home !")
+    return HttpResponse("Welcome to Supplier Home !")
 
 class SupplierAdd(CreateView):
     model = Product
